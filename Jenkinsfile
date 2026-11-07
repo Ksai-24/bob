@@ -11,7 +11,7 @@ pipeline {
 
         stage('Compile Java') {
             steps {
-                sh 'javac helloworld.java'
+                sh 'javac hello.java'
             }
         }
 
