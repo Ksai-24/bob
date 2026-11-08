@@ -3,13 +3,13 @@ node {
     stage('BUILD') {
         echo "Building Java Application..."
         checkout scm
-        sh 'javac Main.java'
+        sh 'javac hello.java'
         echo "Build Completed Successfully"
     }
 
     stage('TEST') {
         echo "Testing Java Application..."
-        sh 'java Main'
+        sh 'java hello'
         echo "Testing Completed Successfully"
     }
 
