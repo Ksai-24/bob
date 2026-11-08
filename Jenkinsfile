@@ -9,7 +9,7 @@ node {
 
     stage('TEST') {
         echo "Testing Java Application..."
-        sh 'java hello'
+        sh 'java Main'
         echo "Testing Completed Successfully"
     }
 
