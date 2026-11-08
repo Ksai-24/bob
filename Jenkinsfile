@@ -1,24 +1,21 @@
-pipeline {
-    agent any
+node {
 
-    stages {
-
-        stage('BUILD' ) {
-            steps {
-                echo 'Repository cloned successfully'
-            }
-        }
-
-        stage('TEST') {
-            steps {
-                sh 'javac hello.java'
-            }
-        }
-
-        stage('DEPLOY') {
-            steps {
-                sh 'java Main'
-            }
-        }
+    stage('BUILD') {
+        echo "Building Java Application..."
+        checkout scm
+        sh 'javac Main.java'
+        echo "Build Completed Successfully"
     }
+
+    stage('TEST') {
+        echo "Testing Java Application..."
+        sh 'java Main'
+        echo "Testing Completed Successfully"
+    }
+
+    stage('DEPLOY') {
+        echo "Deploying Java Application..."
+        echo "Deployment Successful!"
+    }
+
 }
