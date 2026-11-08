@@ -3,19 +3,19 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
+        stage('BUILD' ) {
             steps {
                 echo 'Repository cloned successfully'
             }
         }
 
-        stage('Compile Java') {
+        stage('TEST') {
             steps {
                 sh 'javac hello.java'
             }
         }
 
-        stage('Execute Java') {
+        stage('DEPLOY') {
             steps {
                 sh 'java Main'
             }
